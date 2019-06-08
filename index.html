@@ -109,7 +109,7 @@
   .socialbuttons {
     position: fixed;
     top: 0;
-    right: 10vw;
+    right: 14vw;
   }
   .table-buttons {
     width: 2vw;
@@ -127,6 +127,20 @@
   }
   .success_submission {
     font-size: 2vw;
+  }
+  .songtitle {
+		position: fixed;
+		top: 40vw;
+		left: 7vw;
+		font-size: 4vw;
+		color: white;
+  }
+  a {
+  	color: white;
+
+  }
+  a:hover {
+  	color: #ffdd00;
   }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -155,7 +169,7 @@ $(function() {
 </head>
 <body>
 	<div class="title">Ari Jonathan</div>
-	<img class="landingimg" src="./art/pic2.jpg">
+	<img class="landingimg" src="./art/seethelight.jpg">
   <div id="email-form">
     <form class="form-inline" id="test-form">
     <div class="form-description">Get emailed about releases and concerts only</div>
@@ -190,7 +204,21 @@ $(function() {
           <img style="height: 2vw; width: auto;" src="./logos/soundcloud.png" class="sharebutton">
         </a>
       </div>
+      <div class='table-cell-buttons'>
+        <a target="_blank" href="https://open.spotify.com/artist/5be3akpMYTfR6Yj4yLl2jx?si=UL2owvVCSWGeKU1-VVjygg">
+          <img style="height: 2vw; width: auto;" src="./logos/spotify.png" class="sharebutton">
+        </a>
+      </div>
+      <div class='table-cell-buttons'>
+        <a target="_blank" href="https://music.apple.com/us/artist/ari-jonathan/1466914924">
+          <img style="height: 2vw; width: auto;" src="./logos/apple_music.png" class="sharebutton">
+        </a>
+      </div>
     </div>
+  </div>
+  <div>
+  	<div class="songtitle">See the Light <br>(feat. Cole Blouin)<br> <div style="opacity: 0.7;"> → <a  href="https://distrokid.com/hyperfollow/arijonathan/see-the-light-feat-cole-blouin">Out Now</a></div> </div>
+  	
   </div>
 
 </body>
