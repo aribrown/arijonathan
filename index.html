@@ -4,23 +4,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <style>
-  body, html {
-  	height: 100%;
-  	margin: 0;
-  }
   body {
     background-color: black;
     color: #ffffff;
-    width: 100vw;
-    height: 100vw;
-    background-repeat: repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
   }
   @font-face {
       font-family: 'quicksand';
       src: url('./fonts/quicksand.ttf');
+  }
+  .blackdiv {
+    z-index: 3;
+    background-color: black;
+    position: fixed;
+    height: 5.5vw;
+    width: 100%;
+    top: 0;
+    left: 0;
   }
   .landingimg {
 		position: fixed;
@@ -31,8 +30,9 @@
 		z-index: -1;
   }
   .title {
+    z-index: 5;
   	font-family: quicksand;
-  	font-size: 2.5vw;
+  	font-size: 3vw;
   	color: inherit;
   	position: fixed;
   	top: 1.5vw;
@@ -41,7 +41,7 @@
   .menu {
   	position: fixed;
   	top: 9vw;
-  	left: 1vw;
+  	left: 2vw;
   	color: inherit;
   	font-family: quicksand;
   	font-size: 2vw;
@@ -66,22 +66,22 @@
     margin-top: 17vw;
       margin-left: auto;
       margin-right: auto;
-      width: 45%;
+      width: 50%;
       color: inherit;
       font-family: avenir;
   }
   .biocontentblock {
     display: block;
     margin-top: 16vw;
-      margin-left: 20%;
-      margin-right: auto;
+      margin-left: 24%;
+      margin-right: 20%;
       width: 60%;
       color: inherit;
-      font-family: avenir;
+
   }
   .biotext {
     font-family: quicksand;
-    font-size: 1.8vw;
+    font-size: 2vw;
   }
   .sectionheader {
     color: inherit;
@@ -91,6 +91,7 @@
     cursor: pointer;
   }
   .socialbuttons {
+    z-index: 5;
     position: fixed;
     top: 0;
     right: 10vw;
@@ -104,22 +105,17 @@
     vertical-align:top;
   }
   .sharebutton-upperleft {
-    width: 2vw;
     border: 0;
     padding-right: 0.2vw;
     padding-left: 0.2vw;
+    height: 2vw;
+    width: auto;
   }
   a {
   	color: white;
   }
   a:hover {
   	color: #ffdd00;
-  }
-   .description {
-    color: #A8A8A8;
-    font-family: inherit;
-    font-size: 1.5vw;
-    padding-bottom: 2vw;
   }
   .table { 
     display:table; 
@@ -139,9 +135,6 @@
     display:table-cell;
     vertical-align:top;
   }
-  .album {
-    width: 17vw;
-  }
   .sharebutton {
     height: 1.4vw; 
     width: auto;
@@ -151,34 +144,34 @@
   }
   .audioplayer {
     width: 17vw;
-    height: 17vw;
+    height: 30vw;
     background-size: 17vw;
     background-repeat: no-repeat;
   }
   .audioinfo {
-    visibility: hidden;
-    opacity: 0;
+  /*  visibility: hidden;
+    opacity: 0;*/
     transition:visibility 0s linear 0.5s,opacity 0.5s linear;
-    width: 17vw;
-    height: 12vw;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 42%;
+    background-color: rgba(255, 255, 255, 0.3);
     position: relative;
-    top: 5vw;
+    top: 57%;
   }
-  .audioplayer:hover .audioinfo {
+/*  .audioplayer:hover .audioinfo {
     visibility: visible;
     opacity: 1;
     transition-delay:0s;
-  }
+  }*/
   .progress-bar {
-    height: 0.5vw;
+    height: 5%;
     width: 68%;
     margin: 6% auto;
     background-color: rgba(0, 0, 0, 1.0);
     border-radius: 10px;
     font-family: avenir;
     position: relative;
-    top: 2vw;
+    top: 16%;
   }
   .audiofill {
     height: 100%;
@@ -187,15 +180,15 @@
     font-family: avenir;
   }
   .time--current, .time--total {
-    color: black;
+    color: white;
     font-size: 1vw;
     position: absolute;
   }
   .time--current {
-    left: 0.2vw;
+    left: 2%;
   }
   .time--total {
-    right: 0.2vw;
+    right: 2%;
   }
   .album-name {
     width: 100%;
@@ -203,9 +196,9 @@
     align-items: center;
     font-size: 1.2vw;
     justify-content: center;
-    color: black;
+    color: white;
     position: absolute;
-    top: 3.5vw;
+    top: 30%;
     font-family: questrial;
     text-transform: uppercase;
     letter-spacing: 0.5vw;
@@ -217,9 +210,9 @@
     align-items: center;
     font-size: 1.0vw;
     justify-content: center;
-    color: gray;
+  /*  color: gray;*/
     position: absolute;
-    top: 8vw;
+    top: 72%;
     font-family: questrial;
     letter-spacing: 0.2vw;
     text-align: center;
@@ -232,11 +225,116 @@
     justify-content: center;
     color: black;
     position: absolute;
-    top: 10vw;
+    top: 83%;
   }
   .playpause i:hover {
     color: #ffdd00;
   }
+@media (max-width: 600px) { /* SMALL SCREENS */
+  .blackdiv {
+    height: 12vw;
+  }
+  .contentblock {
+      width: 40%;
+  }
+  .biocontentblock {
+      margin-top: 40vw;
+      margin-left: 25vw;
+      margin-right: 25vw;
+  }
+  .socialbuttons {
+    position: fixed;
+    top: 2vw;
+    right: 27vw;
+  }
+  .table-buttons-upperleft {
+    width: 2vw;
+    padding-top: 1vw;
+  }
+  .table-cell-buttons-upperleft {
+    display:table-cell;
+    vertical-align:top;
+  }
+  .sharebutton-upperleft {
+      border: 0;
+      padding-right: 0.5vw;
+      padding-left: 0.5vw;
+      height: 5vw;
+      width: auto;
+  }
+  .title {
+    font-size: 6.5vw;
+    top: 2vw;
+    left: 4vw;
+  }
+  .menu {
+    top: 20vw;
+    font-size: 5vw;
+  }
+  .sectionheader {
+    padding-top: 5vw;
+    font-size: 6vw;
+  }
+  .table { 
+    display: block; 
+    padding-bottom: 2vw;
+  }
+  .table-cell {
+    padding-right: 4vw;
+    padding-bottom: 4vw;
+    display:block;
+    vertical-align:top;
+  }
+  .table-buttons {
+    width: 17vw;
+    padding-top: 0.5vw;
+  }
+  .table-cell-buttons {
+    display:table-cell;
+    vertical-align:top;
+  }
+  .sharebutton {
+    height: 1.4vw; 
+    width: auto;
+    border: 0;
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+  }
+  .audioplayer {
+    width: 40vw;
+    height: 70vw;
+    background-size: 40vw;
+  }
+  .time--current, .time--total {
+    font-size: 2vw;
+  }
+  .album-name {
+    font-size: 2.5vw;
+  }
+  .preview-text {
+    font-size: 2.5vw;
+  }
+  .audiocontrols {
+    font-size: 2.5vw;
+  }
+  .biocontentblock {
+    margin-top: 20vw;
+  }
+  .biotext {
+    font-size: 3vw;
+  }
+  .table-buttons {
+    width: 17vw;
+    padding-top: 2vw;
+  }
+  .sharebutton {
+    height: 4vw; 
+    width: auto;
+    border: 0;
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+  }
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
@@ -393,6 +491,7 @@
     }
     function Music() {
         $("#maincontent").empty();
+        window.scrollTo(0,0);
         $("#maincontent").html(
             function() {return $( $("#musicblock").html() ).hide().fadeIn(1000);}
         );
@@ -403,6 +502,7 @@
     }
     function Bio () {
         $("#maincontent").empty();
+        window.scrollTo(0,0);
         $("#maincontent").html(
             function() {return $( $("#bioblock").html() ).hide().fadeIn(1000);}
         );
@@ -455,6 +555,39 @@
           </div>
         </div>
       </div>
+<!--       <div class='table-cell'>
+        <div class="audioplayer" style="background-image: url('./art/are_we_what_we_are_when_we_grow_up.jpg');">
+          <div class="audioinfo">
+            <div class="progress-bar">
+              <div class="audiofill"></div>
+            </div>
+            <div class="time--current">---</div>
+            <div class="time--total">---</div>
+            <div class="album-name">Are We What We Are When We Grow Up</div>
+            <div class="preview-text">Preview - Cease Moon</div>
+            <div class="audiocontrols">
+              <div class="playpause" onclick="PlayPause('./media/ceasemoonpreview.wav', this, '')"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='table-buttons'>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://open.spotify.com/album/5aden0NUYwuIC8izzGSZge?si=NYQ9YRlRT6e8Ua7-pEM0Hw">
+              <img src="./logos/spotify.png" class="sharebutton">
+            </a>
+          </div>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://music.apple.com/us/album/are-we-what-we-are-when-we-grow-up/1517957018">
+              <img src="./logos/apple_music.png" class="sharebutton">
+            </a>
+          </div>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://soundcloud.com/arijonathn/sets/are-we-what-we-are-when-we-grow-up">
+              <img src="./logos/soundcloud.png" class="sharebutton">
+            </a>
+          </div>
+        </div>
+      </div> -->
     </div>
     <div class="sectionheader">Singles</div>
     <div class='table'>
@@ -511,6 +644,8 @@
 </head>
 
 <body>
+    <div class="blackdiv">
+  </div>
 	<div class="title">Ari Jonathan</div>
   <div class="socialbuttons">
     <div class='table-buttons-upperleft'>
@@ -521,17 +656,17 @@
       </div>
       <div class='table-cell-buttons-upperleft'>
         <a target="_blank" href="https://open.spotify.com/artist/5be3akpMYTfR6Yj4yLl2jx?si=UL2owvVCSWGeKU1-VVjygg">
-          <img style="height: 2vw; width: auto;" src="./logos/spotify.png" class="sharebutton-upperleft">
+          <img src="./logos/spotify.png" class="sharebutton-upperleft">
         </a>
       </div>
       <div class='table-cell-buttons-upperleft'>
         <a target="_blank" href="https://music.apple.com/us/artist/ari-jonathan/1466914924">
-          <img style="height: 2vw; width: auto;" src="./logos/apple_music.png" class="sharebutton-upperleft">
+          <img src="./logos/apple_music.png" class="sharebutton-upperleft">
         </a>
       </div>
       <div class='table-cell-buttons-upperleft'>
         <a target="_blank" href="https://soundcloud.com/arijonathn/">
-          <img style="height: 2vw; width: auto;" src="./logos/soundcloud.png" class="sharebutton-upperleft">
+          <img src="./logos/soundcloud.png" class="sharebutton-upperleft">
         </a>
       </div>
     </div>
