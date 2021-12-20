@@ -2,29 +2,27 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Ole');
+  @import url('https://fonts.googleapis.com/css2?family=Waterfall');
   body, html {
   	height: 100%;
   	margin: 0;
   }
   body {
-  	background-color: black;
-  	color: #ffffff;
-  	width: 100vw;
-  	height: 100vw;
-  	background-repeat: repeat;
-  	background-position: center center;
-  	background-size: cover;
-  	background-attachment: fixed;
-    overflow: hidden;
+    background-color: black;
+    color: #ffffff;
+    width: 100vw;
+    height: 100vw;
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
   }
   @font-face {
-    font-family: 'avenir';
-    src: url('./fonts/Avenir.ttc');
-  }  
-  @font-face {
-  	font-family: 'timesnewroman';
-  	src: url('./fonts/MaestroTimes.ttf');
+      font-family: 'quicksand';
+      src: url('./fonts/quicksand.ttf');
   }
   .landingimg {
 		position: fixed;
@@ -35,22 +33,19 @@
 		z-index: -1;
   }
   .title {
-    text-transform: uppercase;
-  	font-family: timesnewroman;
+  	font-family: quicksand;
   	font-size: 2.5vw;
-  	/*font-weight: bold;*/
   	color: inherit;
   	position: fixed;
-  	top: 0vw;
-  	left: 3vw;
+  	top: 1.5vw;
+  	left: 2vw;
   }
   .menu {
   	position: fixed;
-  	top: 10vw;
-  	left: 3vw;
+  	top: 9vw;
+  	left: 1vw;
   	color: inherit;
-    text-transform: uppercase;
-  	font-family: timesnewroman;
+  	font-family: quicksand;
   	font-size: 2vw;
   }
   .menu button {
@@ -63,163 +58,494 @@
   	font-size: inherit;
   	font-family: inherit;
   	text-decoration:none; 
-    text-transform: uppercase;
   	padding: 4pt;
-  	/*text-transform: lowercase;*/
   }
   .menu button:hover {
   	color: #ffdd00;
   }
-  #email-form {
-    position: fixed;
-    bottom: 0vw;
-    right: 0.5vw;
+  .contentblock {
+    display: block;
+    margin-top: 17vw;
+      margin-left: auto;
+      margin-right: auto;
+      width: 45%;
+      color: inherit;
+      font-family: avenir;
   }
-  .form-inline {  
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+  .biocontentblock {
+    display: block;
+    margin-top: 17vw;
+      margin-left: 20%;
+      margin-right: auto;
+      width: 60%;
+      color: inherit;
+      font-family: avenir;
   }
-
-  .form-inline input {
-    vertical-align: middle;
-    margin: 0.5vw 1vw 0.5vw 0;
-    padding: 0.8vw;
-    background-color: #ffffff;
+  .biotext {
+    font-family: quicksand;
+    font-size: 1.8vw;
   }
-
-  .form-inline button {
-    padding: 0.8vw 2vw;
-    background-color: black;
-    border: 1px solid #ddd;
-    color: white;
+  .sectionheader {
+    color: inherit;
+    font-family: inherit;
+    font-size: 3vw;
+    padding-bottom: 1vw;
     cursor: pointer;
-  }
-
-  .form-inline button:hover {
-    background-color: #ffdd00;
-    color: black;
-  }
-  .form-description {
-    font-size: 2vw;
-    opacity: 0.7;
-    padding-bottom: 0.5vw;
-    padding-right: 1vw;
   }
   .socialbuttons {
     position: fixed;
     top: 0;
-    right: 14vw;
+    right: 10vw;
   }
-  .table-buttons {
+  .table-buttons-upperleft {
     width: 2vw;
     padding-top: 1vw;
   }
-  .table-cell-buttons {
+  .table-cell-buttons-upperleft {
     display:table-cell;
     vertical-align:top;
   }
-  .sharebutton {
+  .sharebutton-upperleft {
     width: 2vw;
     border: 0;
     padding-right: 0.2vw;
     padding-left: 0.2vw;
   }
-  .success_submission {
-    font-size: 2vw;
-  }
-  .songtitle {
-		position: fixed;
-		top: 40vw;
-		left: 7vw;
-		font-size: 4vw;
-		color: white;
-  }
   a {
   	color: white;
-
   }
   a:hover {
   	color: #ffdd00;
+  }
+   .description {
+    color: #A8A8A8;
+    font-family: inherit;
+    font-size: 1.5vw;
+    padding-bottom: 2vw;
+  }
+  .table { 
+    display:table; 
+    padding-bottom: 2vw;
+  }
+  .table-cell {
+    padding-right: 4vw;
+    padding-bottom: 4vw;
+    display:table-cell;
+    vertical-align:top;
+  }
+  .table-buttons {
+    width: 17vw;
+    padding-top: 0.5vw;
+  }
+  .table-cell-buttons {
+    display:table-cell;
+    vertical-align:top;
+  }
+  .album {
+    width: 17vw;
+  }
+  .sharebutton {
+    height: 1.4vw; 
+    width: auto;
+    border: 0;
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
+  }
+  .audioplayer {
+    width: 17vw;
+    height: 17vw;
+    background-size: 17vw;
+    background-repeat: no-repeat;
+  }
+  .audioinfo {
+    visibility: hidden;
+    opacity: 0;
+    transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+    width: 17vw;
+    height: 12vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    top: 5vw;
+  }
+  .audioplayer:hover .audioinfo {
+    visibility: visible;
+    opacity: 1;
+    transition-delay:0s;
+  }
+  .progress-bar {
+    height: 0.5vw;
+    width: 68%;
+    margin: 6% auto;
+    background-color: rgba(0, 0, 0, 1.0);
+    border-radius: 10px;
+    font-family: avenir;
+    position: relative;
+    top: 2vw;
+  }
+  .audiofill {
+    height: 100%;
+    width: 35%;
+    background-color: rgba(255, 221, 0, 1.0);
+    font-family: avenir;
+  }
+  .time--current, .time--total {
+    color: black;
+    font-size: 1vw;
+    position: absolute;
+  }
+  .time--current {
+    left: 0.2vw;
+  }
+  .time--total {
+    right: 0.2vw;
+  }
+  .album-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2vw;
+    justify-content: center;
+    color: black;
+    position: absolute;
+    top: 3.5vw;
+    font-family: questrial;
+    text-transform: uppercase;
+    letter-spacing: 0.5vw;
+    text-align: center;
+  }
+  .preview-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.0vw;
+    justify-content: center;
+    color: gray;
+    position: absolute;
+    top: 8vw;
+    font-family: questrial;
+    letter-spacing: 0.2vw;
+    text-align: center;
+  }
+  .audiocontrols {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2vw;
+    justify-content: center;
+    color: black;
+    position: absolute;
+    top: 10vw;
+  }
+  .playpause i:hover {
+    color: #ffdd00;
   }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 <script type="text/javascript">
-  var url = 'https://script.google.com/macros/s/AKfycbydsunm1Ji-QwjDkVsiWFLODoiTouVdSCM5zmyQUr-W5UCuxco/exec'
 
-$(function() {
-  $('#submit-form').on('click', function(e) {
-    e.preventDefault();
-    var jqxhr = $.ajax({
-      url: url,
-      method: "GET",
-      dataType: "json",
-      data: $('#test-form').serializeObject(),
-      success: function() {
-        $('#email-form').html(function(){return $($("#successhtml").html());}).fadeOut(2000);
+    $('body').on('touchstart', function() {}); // may help with hover on touch screen?
+
+    let audio = new Audio;
+    let fileToCurrentTime = new Object();
+    let currentHTMLObj = null;
+    let currentFile = "";
+    let isPaused = true;
+    let eventFn = null;
+    let endedFn = null;
+    let isFirstTime = true;
+
+    function timeToHTML(t) {
+      var s = parseInt(t % 60);
+      if (s < 10) {s = '0' + s;}
+      var m = parseInt((t / 60) % 60);
+      return m + ':' + s;
+    }
+    function PlayPause(fileStr, obj, type) {
+      // if audio is playing
+      if (!isPaused) {
+        if (currentHTMLObj == obj) {
+          $(obj).html(function(){return $($("#playhtml").html());});
+          audio.pause();
+          isPaused = true;
+        } else {
+          fileToCurrentTime[currentFile] = audio.currentTime;
+          audio.pause();
+          $(currentHTMLObj).html(function(){return $($("#playhtml").html());});
+          $(obj).html(function(){return $($("#pausehtml").html());});
+          audio.src = fileStr;
+          if (fileStr in fileToCurrentTime) {audio.currentTime = fileToCurrentTime[fileStr];}
+          audio.play();
+          audio.removeEventListener('timeupdate', eventFn);
+          $(currentHTMLObj).parent().parent().find('.progress-bar' + type).off("click");
+          eventFn = function() {
+            $(obj).parent().parent().find('.time--current' + type).html(
+              timeToHTML(audio.currentTime));
+            $(obj).parent().parent().find('.time--total' + type).html(
+              "-" + timeToHTML(audio.duration - audio.currentTime));
+            $(obj).parent().parent().find('.audiofill' + type)
+              .css('width', audio.currentTime / audio.duration *
+                $(obj).parent().parent().find('.progress-bar' + type).width());
+          };
+          audio.addEventListener("timeupdate", eventFn);
+          audio.removeEventListener("ended", endedFn);
+          endedFn = function() {
+            audio.currentTime = 0;
+            fileToCurrentTime[fileStr] = audio.currentTime;
+            $(obj).parent().parent().find('.audiofill' + type)
+              .css('width', 0);
+            $(obj).html(function(){return $($("#playhtml").html());});
+            isPaused = true;
+          };
+          audio.addEventListener("ended", endedFn);
+          $(obj).parent().parent().find('.progress-bar' + type)
+            .click(function(e) {
+              var posX = $(this).offset().left, posY = $(this).offset().top;
+              var relativePosX = e.pageX - posX;
+              var divWidth = $(this).width();
+              var fraction = relativePosX/divWidth;
+              audio.currentTime = audio.duration * fraction;
+          });
+          isPaused = false;
+          currentHTMLObj = obj;
+          currentFile = fileStr;
+        }
       }
-    });
-  });
-});
+      // if audio is not playing
+      else {
+        if (isFirstTime || currentHTMLObj == obj) {
+          $(obj).html(function(){return $($("#pausehtml").html());});
+          if (isFirstTime) {
+            eventFn = function() {
+              $(obj).parent().parent().find('.time--current' + type).html(
+                timeToHTML(audio.currentTime));
+              $(obj).parent().parent().find('.time--total' + type).html(
+                "-" + timeToHTML(audio.duration - audio.currentTime));
+              $(obj).parent().parent().find('.audiofill' + type)
+                .css('width', audio.currentTime / audio.duration *
+                  $(obj).parent().parent().find('.progress-bar' + type).width());
+            };
+            audio.addEventListener("timeupdate", eventFn);
+            $(obj).parent().parent().find('.progress-bar' + type)
+              .click(function(e) {
+                var posX = $(this).offset().left, posY = $(this).offset().top;
+                var relativePosX = e.pageX - posX;
+                var divWidth = $(this).width();
+                var fraction = relativePosX/divWidth;
+                audio.currentTime = audio.duration * fraction;
+            });
+            endedFn = function() {
+              audio.currentTime = 0;
+              fileToCurrentTime[fileStr] = audio.currentTime;
+              $(obj).parent().parent().find('.audiofill' + type)
+                .css('width', 0);
+              $(obj).html(function(){return $($("#playhtml").html());});
+              isPaused = true;
+            };
+            audio.addEventListener("ended", endedFn);
+            currentHTMLObj = obj;
+            audio.src = fileStr;
+          }
+          audio.play();
+          isFirstTime = false;
+          isPaused = false;
+          currentFile = fileStr;
+        } else {
+          fileToCurrentTime[currentFile] = audio.currentTime;
+          $(obj).html(function(){return $($("#pausehtml").html());});
+          audio.src = fileStr;
+          if (fileStr in fileToCurrentTime) {audio.currentTime = fileToCurrentTime[fileStr];}
+          audio.play();
+          audio.removeEventListener('timeupdate', eventFn);
+          $(currentHTMLObj).parent().parent().find('.progress-bar' + type).off("click");
+          eventFn = function() {
+            $(obj).parent().parent().find('.time--current' + type).html(
+              timeToHTML(audio.currentTime));
+            $(obj).parent().parent().find('.time--total' + type).html(
+              "-" + timeToHTML(audio.duration - audio.currentTime));
+            $(obj).parent().parent().find('.audiofill' + type)
+              .css('width', audio.currentTime / audio.duration *
+                $(obj).parent().parent().find('.progress-bar' + type).width());
+          };
+          audio.addEventListener("timeupdate", eventFn);
+          audio.removeEventListener("ended", endedFn);
+          endedFn = function() {
+            audio.currentTime = 0;
+            fileToCurrentTime[fileStr] = audio.currentTime;
+            $(obj).parent().parent().find('.audiofill' + type)
+              .css('width', 0);
+            $(obj).html(function(){return $($("#playhtml").html());});
+            audio.pause();
+            isPaused = true;
+          };
+          audio.addEventListener("ended", endedFn);
+          $(obj).parent().parent().find('.progress-bar' + type)
+            .click(function(e) {
+              var posX = $(this).offset().left, posY = $(this).offset().top;
+              var relativePosX = e.pageX - posX;
+              var divWidth = $(this).width();
+              var fraction = relativePosX/divWidth;
+              audio.currentTime = audio.duration * fraction;
+          });
+          currentFile = fileStr;
+          currentHTMLObj = obj;
+          isPaused = false;
+        }
+      }
+    }
+    function Music() {
+        $("#maincontent").empty();
+        $("#maincontent").html(
+            function() {return $( $("#musicblock").html() ).hide().fadeIn(1000);}
+        );
+        $('body').css("background-image", "url(./art/musicbackground.jpeg)");
+        $('body').css("color", "#ffffff");
+        $('#musicbutton').css("color", "#ffdd00");
+        $('#biobutton').css("color", "#ffffff");
+    }
+    function Bio () {
+        $("#maincontent").empty();
+        $("#maincontent").html(
+            function() {return $( $("#bioblock").html() ).hide().fadeIn(1000);}
+        );
+        $('body').css("background-image", "url(./art/musicbackground.jpeg)");
+        $('body').css("color", "#ffffff");
+        $('#musicbutton').css("color", "#ffffff");
+        $('#biobutton').css("color", "#ffdd00");
+    }
 </script>
-<script id="successhtml" type="text/html">
-  <div class="success_submission">Thank You</div>
+<script id="playhtml" type="text/html">
+    <i class="fas fa-play"></i>
+</script>
+<script id="pausehtml" type="text/html">
+    <i class="fas fa-pause"></i>
+</script>
+<script id="musicblock" type="text/html">
+  <div class="contentblock">
+    <div class="sectionheader">Albums</div>
+    <div class='table'>
+      <div class='table-cell'>
+        <div class="audioplayer" style="background-image: url('./art/are_we_what_we_are_when_we_grow_up.jpg');">
+          <div class="audioinfo">
+            <div class="progress-bar">
+              <div class="audiofill"></div>
+            </div>
+            <div class="time--current">---</div>
+            <div class="time--total">---</div>
+            <div class="album-name">Are We What We Are When We Grow Up</div>
+            <div class="preview-text">Preview - Cease Moon</div>
+            <div class="audiocontrols">
+              <div class="playpause" onclick="PlayPause('./media/ceasemoonpreview.wav', this, '')"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='table-buttons'>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://open.spotify.com/album/5aden0NUYwuIC8izzGSZge?si=NYQ9YRlRT6e8Ua7-pEM0Hw">
+              <img src="./logos/spotify.png" class="sharebutton">
+            </a>
+          </div>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://music.apple.com/us/album/are-we-what-we-are-when-we-grow-up/1517957018">
+              <img src="./logos/apple_music.png" class="sharebutton">
+            </a>
+          </div>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://soundcloud.com/arijonathn/sets/are-we-what-we-are-when-we-grow-up">
+              <img src="./logos/soundcloud.png" class="sharebutton">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sectionheader">Singles</div>
+    <div class='table'>
+      <div class='table-cell'>
+        <div class="audioplayer" style="background-image: url('./art/seethelight.jpg');">
+          <div class="audioinfo">
+            <div class="progress-bar">
+              <div class="audiofill"></div>
+            </div>
+            <div class="time--current">---</div>
+            <div class="time--total">---</div>
+            <div class="album-name">See the Light (feat. Cole Blouin)</div>
+            <div class="preview-text">Preview - See the Light</div>
+            <div class="audiocontrols">
+              <div class="playpause" onclick="PlayPause('./media/seethelightpreview.wav', this, '')"><i class="fas fa-play"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='table-buttons'>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://open.spotify.com/track/1rhM6wQrE0px5op6mlX5QZ?si=a70913f6e0eb45da">
+              <img src="./logos/spotify.png" class="sharebutton">
+            </a>
+          </div>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://music.apple.com/us/album/see-the-light-feat-cole-blouin/1467094474?i=1467094478">
+              <img src="./logos/apple_music.png" class="sharebutton">
+            </a>
+          </div>
+          <div class='table-cell-buttons'>
+            <a target="_blank" href="https://soundcloud.com/arijonathn/see-the-light-feat-cole-blouin">
+              <img src="./logos/soundcloud.png" class="sharebutton">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+<script id="bioblock" type="text/html">
+    <div class="biocontentblock">
+        <div class="biotext">
+
+
+        Ari Jonathan is a San Francisco-based artist and sound designer. Currently employed by Apple, he is part of an elite team of sound designers who make the loops and instruments for GarageBand and Logic Pro. He is recognized for producing an elegant, crisp, naturalistic hip hop/R&B sound - equal parts cerebral and visceral - with sensitive sonic colors layered into musical paintings that capture snapshots of life.  Making music grounds Ari in the absurd, romantic, psychedelic experience that is being human. These are experimental beats worth sipping some chardonnay to.<br><br>
+
+        Ari also invents new musical software for GarageBand and Logic Pro. His focus is "meta-music", the idea of swaying the whole music industry's sound by finding new ways to create sound, whether through sound design or music technology. An inventor at heart, he previously developed code for the Mars 2020 Rover mission landing sequence at NASA Jet Propulsion Laboratory.<br><br>
+
+        In musical roots, Ari was originally trained in classical piano under renowned teachers Irina Gorin and Vivian Weilerstein, and went on to study electroacoustic composition under John Mallia at the New England Conservatory of Music. Growing up, he internalized the sensitivity of Chopin, textures of Ravel, and passion of Rachmaninoff. Ari most notably won Grand Prize at the Cincinnati World Piano Competition at age 11, followed by a solo piano performance at Carnegie Hall.
+
+        </div>
+    </div>
 </script>
 </head>
+
 <body>
 	<div class="title">Ari Jonathan</div>
-	<img class="landingimg" src="./art/seethelight.jpg">
-  <div id="email-form">
-    <form class="form-inline" id="test-form">
-    <div class="form-description">Get emailed about releases and concerts only</div>
-      <div>
-        <label></label>
-        <input id="inputarea" type="text" name="email" placeholder="Enter email"/>
-      </div>
-      <div>
-        <button type="submit" id="submit-form">Submit</button>
-      </div>
-    </form>
-  </div>
   <div class="socialbuttons">
-    <div class='table-buttons'>
-      <div class='table-cell-buttons'>
-        <a target="_blank" href="https://www.facebook.com/arijonathn/">
-          <img style="height: 1.8vw;" src="./logos/facebook.svg" class="sharebutton">
+    <div class='table-buttons-upperleft'>
+      <div class='table-cell-buttons-upperleft'>
+        <a target="_blank" href="https://www.instagram.com/ari_jonathan_/">
+          <img src="./logos/instagram.svg" class="sharebutton-upperleft">
         </a>
       </div>
-      <div class='table-cell-buttons'>
-        <a target="_blank" href="https://www.instagram.com/arijonathn/">
-          <img src="./logos/instagram.svg" class="sharebutton">
-        </a>
-      </div>
-      <div class='table-cell-buttons'>
-        <a target="_blank" href="https://twitter.com/arijonathn/">
-          <img style="margin-left: 0.4vw;" src="./logos/twitter.png" class="sharebutton">
-        </a>
-      </div>
-      <div class='table-cell-buttons'>
-        <a target="_blank" href="https://soundcloud.com/arijonathn/">
-          <img style="height: 2vw; width: auto;" src="./logos/soundcloud.png" class="sharebutton">
-        </a>
-      </div>
-      <div class='table-cell-buttons'>
+      <div class='table-cell-buttons-upperleft'>
         <a target="_blank" href="https://open.spotify.com/artist/5be3akpMYTfR6Yj4yLl2jx?si=UL2owvVCSWGeKU1-VVjygg">
-          <img style="height: 2vw; width: auto;" src="./logos/spotify.png" class="sharebutton">
+          <img style="height: 2vw; width: auto;" src="./logos/spotify.png" class="sharebutton-upperleft">
         </a>
       </div>
-      <div class='table-cell-buttons'>
+      <div class='table-cell-buttons-upperleft'>
         <a target="_blank" href="https://music.apple.com/us/artist/ari-jonathan/1466914924">
-          <img style="height: 2vw; width: auto;" src="./logos/apple_music.png" class="sharebutton">
+          <img style="height: 2vw; width: auto;" src="./logos/apple_music.png" class="sharebutton-upperleft">
+        </a>
+      </div>
+      <div class='table-cell-buttons-upperleft'>
+        <a target="_blank" href="https://soundcloud.com/arijonathn/">
+          <img style="height: 2vw; width: auto;" src="./logos/soundcloud.png" class="sharebutton-upperleft">
         </a>
       </div>
     </div>
   </div>
-  <div>
-  	<div class="songtitle">See the Light <br>(feat. Cole Blouin)<br> <div style="opacity: 0.7;"> → <a  href="https://distrokid.com/hyperfollow/arijonathan/see-the-light-feat-cole-blouin">Out Now</a></div> </div>
-  	
-  </div>
+  <div class="menu">
+      <button class="menubutton" onclick="Music()" id="musicbutton">Music</button>
+      <button class="menubutton" onclick="Bio()" id="biobutton">Bio</button>
 
+  </div>
+  <div id="maincontent">
+      <img class="landingimg" src="./art/landing.jpeg">
+  </div>
+  <script type="text/javascript" src="./slick/slick.min.js"></script>
 </body>
 </html>
